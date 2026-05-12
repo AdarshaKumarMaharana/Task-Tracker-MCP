@@ -1,6 +1,6 @@
 {
   "slug" : "task-tracker-mcp",
-  "name" : "Task Tracker MCP",
+  "name" : "Task Tracker MCP 003",
   "description" : "MCP server for creating, listing, and completing tasks with in-memory storage",
   "category" : "Productivity",
   "transport" : "STREAMABLE_HTTP",
@@ -8,7 +8,7 @@
   "requiresAuth" : true,
   "tools" : [ {
     "name" : "create_task",
-    "description" : "Creates a new task with title, optional description, and priority. Returns the task ID.",
+    "description" : "Creates a new task with title, optional description, and priority. Returns the task ID",
     "inputSchema" : {
       "type" : "object",
       "properties" : {
@@ -27,32 +27,6 @@
         }
       },
       "required" : [ "title" ]
-    }
-  }, {
-    "name" : "list_tasks",
-    "description" : "Lists all tasks, optionally filtered by status",
-    "inputSchema" : {
-      "type" : "object",
-      "properties" : {
-        "status" : {
-          "type" : "string",
-          "enum" : [ "todo", "in-progress", "done", "all" ],
-          "default" : "all"
-        }
-      }
-    }
-  }, {
-    "name" : "complete_task",
-    "description" : "Marks a task as done by ID",
-    "inputSchema" : {
-      "type" : "object",
-      "properties" : {
-        "id" : {
-          "type" : "string",
-          "description" : "Task UUID to mark complete"
-        }
-      },
-      "required" : [ "id" ]
     }
   } ]
 }
