@@ -13,7 +13,7 @@
   run: npm ci || npm install
 - name: Run tests
   run: npm test --silent || true    — per-language setup + test steps (setup-node/python/java + run tests)
-#   6a02e4896382137d0e33d063  — the connector picked in onboarding (or empty string)
+#   6a02f8846382137d0e33d067  — the connector picked in onboarding (or empty string)
 #
 # Strategy (safe-by-default + opt-in deploy):
 #   1. Always: lint + per-language test (via - uses: actions/setup-node@v4
@@ -30,7 +30,7 @@
 #      repo secrets exist. Skips cleanly otherwise — never fails the build.
 #   4. Optional: deploy to AWS ECS if `AWS_ROLE_ARN` + `AWS_REGION` repo
 #      secrets exist. Skips cleanly otherwise.
-#   5. 6a02e4896382137d0e33d063 is exposed as an env var so downstream steps can
+#   5. 6a02f8846382137d0e33d067 is exposed as an env var so downstream steps can
 #      branch on the connector picked at onboarding time.
 
 name: build-and-deploy-task-tracker-mcp
@@ -50,7 +50,7 @@ permissions:
 env:
   IMAGE_NAME: ghcr.io/${{ github.repository }}/task-tracker-mcp
   MCP_LANGUAGE: typescript
-  MCP_CONNECTOR_ID: "6a02e4896382137d0e33d063"
+  MCP_CONNECTOR_ID: "6a02f8846382137d0e33d067"
 
 jobs:
   # ───────────────────────────── 1. Test ─────────────────────────────
