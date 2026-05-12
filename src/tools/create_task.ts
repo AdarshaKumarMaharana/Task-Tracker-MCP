@@ -1,5 +1,5 @@
 /**
- * create_task — Creates a new task with title, optional description, and priority. Returns the task ID.
+ * create_task — Creates a new task with title, optional description, and priority. Returns the task ID
  *
  * Side effects: writes
  * Implementation hint: Generate UUID, store in Map<string, Task>, return { id, title, status: 'todo' }
